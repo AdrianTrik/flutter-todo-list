@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "920868746125",
+    "firebase_url": "https://lista-de-compras-ebce9.firebaseio.com",
+    "project_id": "lista-de-compras-ebce9",
+    "storage_bucket": "lista-de-compras-ebce9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:920868746125:android:6ae587997c44538aa903c4",
+        "android_client_info": {
+          "package_name": "co.trik.carrefour"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "920868746125-dll2cgks0p220tvrl6430nsj9ghd2d0h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA7DAFbzuTJ5GcOBOPCF0PqztoI_Or2udI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "920868746125-dll2cgks0p220tvrl6430nsj9ghd2d0h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
