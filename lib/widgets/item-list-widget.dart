@@ -47,6 +47,28 @@ class _ItemListWidgetState extends State<ItemListWidget> {
               }
 
               final items = snapshot.data.documents;
+
+              if (items.length == 0) {
+                return Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Image.asset(
+                      'images/no-items.png',
+                      scale: 1.5,
+                    ),
+                    SizedBox(width: double.infinity, height: 40.0),
+                    Container(
+                      width: 220.0,
+                      child: Text(
+                        'Agregue productos a la lista para comenzar.',
+                        style: TextStyle(fontSize: 20.0),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                  ],
+                );
+              }
+
               List<Item> listItems = List<Item>();
 
               for (var item in items) {
@@ -90,8 +112,22 @@ class _ItemListWidgetState extends State<ItemListWidget> {
                     ),
                     trailing: Checkbox(
                         value: item.checked,
-                        onChanged: (value) {
-                          itemService.toggleCheck(item);
+                        onChanged: (value) async {
+                          await itemService.toggleCheck(item);
+
+                          var checked =
+                              listItems.where((t) => t.checked).length;
+
+                          if (item.checked) {
+                            checked--;
+                          } else {
+                            checked++;
+                          }
+
+                          final total = listItems.length;
+
+                          UtilService.getFlushBar(
+                              context, '$checked de $total');
                         }),
                   );
                 },

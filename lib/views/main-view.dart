@@ -29,9 +29,12 @@ class MainView extends StatelessWidget {
         backgroundColor: kBlueCarrefour,
         title: Text('Lista de compras'),
         leading: Padding(
-          padding: EdgeInsets.only(left: 10.0, bottom: 1.0),
+          padding: EdgeInsets.only(left: 15.0, bottom: 5.0, top: 7.0),
           child: CircleAvatar(
-            child: Image.asset('images/logo-carrefour.png'),
+            child: Icon(
+              Icons.shopping_cart,
+              color: kBlueCarrefour,
+            ),
             backgroundColor: Colors.white,
           ),
         ),
@@ -50,15 +53,17 @@ class MainView extends StatelessWidget {
             context: context,
             isScrollControlled: true,
             builder: (context) => SingleChildScrollView(
-                child: Container(
-              padding: EdgeInsets.only(
-                  bottom: MediaQuery.of(context).viewInsets.bottom),
-              child: AddItemView(
-                onAddItem: (String product, String quantity) {
-                  addItem(product, quantity);
-                },
+              child: Container(
+                padding: EdgeInsets.only(
+                  bottom: MediaQuery.of(context).viewInsets.bottom,
+                ),
+                child: AddItemView(
+                  onAddItem: (String product, String quantity) {
+                    addItem(product, quantity);
+                  },
+                ),
               ),
-            )),
+            ),
           );
         },
       ),

@@ -11,6 +11,7 @@ class MyApp extends StatelessWidget {
     return ChangeNotifierProvider(
       create: (context) => LoadingFlag(),
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         title: 'Lista de compras',
         home: MainView(),
       ),
